@@ -6,11 +6,14 @@ LIBFT = $(LIBFT_DIR)/libftprintf.a
 
 HEADER = -I $(LIBFT_DIR)
 
-NAME = open
+NAME = main
 
-SRCS = open_x.c
+SRCS =	main.c \
+		validations.c
 
-OBJS = open
+OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
+
+OBJ_DIR = build
 
 CFLAGS = -Werror -Wall -Wextra
 
@@ -19,11 +22,16 @@ all: $(LIBFT) $(NAME)
 $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
-open: $(LIBFT)
-	$(CC) $(CFLAGS) open_x.c -o open_x $(LIBFT)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 
 clean:
 	@make -C $(LIBFT_DIR) clean
+	rm -f $(OBJS)
 
 fclean:
 	@make -C $(LIBFT_DIR) fclean
