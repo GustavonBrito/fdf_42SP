@@ -6,27 +6,48 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/04 23:49:04 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/06 18:02:53 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fdf.h"
 #include "libft/headers/ft_printf.h"
-#include "libft/headers/libft.h"
 #include "libft/headers/get_next_line.h"
+#include "libft/headers/libft.h"
 #include "minilibx/mlx.h"
+
+// int validate_map_values(int fd)
+// {
+	
+	
+// 	return (0);
+// }
 
 int	validate_map_structure(int fd)
 {
+	char	**split;
 	char	*buffer;
+	int		i;
+	int		first_line;
 
+	first_line = 0;
 	while (1)
 	{
 		buffer = get_next_line(fd);
-		if (buffer != NULL)
-			ft_printf("%s", buffer);
-		else
+		if (buffer == NULL)
 			break ;
+		split = ft_split(buffer, ' ');
+		i = 0;
+		while (split[i])
+			i++;
+		if (first_line == 0)
+			first_line = i;
+		else if (first_line != i)
+		{
+			return ((ft_free_split(split, i)), (free(buffer)), (-1));
+		}
+		ft_free_split(split, i);
+		free(buffer);
 	}
 	return (1);
 }
@@ -78,6 +99,8 @@ int	init_validations(int argc, char **argv)
 			return (-1);
 		if (validate_map_structure(fd) == 1)
 			ft_printf("Estrutura do mapa esta ok\n");
+		if (validate_map_values() == 1)
+			ft_printf("Valores do mapa está ok\n");
 	}
 	return (0);
 }
