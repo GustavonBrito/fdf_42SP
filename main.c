@@ -6,11 +6,13 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 12:43:59 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/01 00:51:17 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/03 23:56:33 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minilibx/mlx.h"
+#include "libft/headers/libft.h"
+#include "libft/headers/ft_printf.h"
 #include "includes/fdf.h"
 
 typedef struct	s_data {
@@ -31,22 +33,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 int	main(int argc, char **argv)
 {
-	int i;
-	int fd;
-	
-	i = 0;
-	fd = 0;
-	if (argc == 2)
-	{
-		fd = open(argv[1], O_RDONLY);
-		if (!fd)
-		{
-			printf("File descriptor is not correct, check the archive");
-			exit(1);
-		}
-		read_map();
-	}
-	close(fd);
+	init_validations(argc, argv);
 }
 // int		x;
 // int		y;

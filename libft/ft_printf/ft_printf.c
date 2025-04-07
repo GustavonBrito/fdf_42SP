@@ -6,11 +6,11 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 18:10:22 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/20 09:37:27 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/03 18:45:43 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/ft_printf.h"
+#include "../libft/headers/ft_printf.h"
 
 int	define_format(va_list va_list, int flag_definer)
 {

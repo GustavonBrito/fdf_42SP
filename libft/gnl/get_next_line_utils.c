@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 00:18:13 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/12/19 19:22:11 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/05 03:10:32 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <stdio.h>
+#include "../headers/get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	size_t	s_length;
 
@@ -26,7 +25,7 @@ size_t	ft_strlen(const char *s)
 	return (s_length);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	int	i;
 
@@ -44,7 +43,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	unsigned int	k;
 	unsigned int	i;
@@ -53,8 +52,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 && s2)
 	{
-		i = ft_strlen(s1);
-		j = ft_strlen(s2);
+		i = ft_strlen_gnl(s1);
+		j = ft_strlen_gnl(s2);
 		k = -1;
 		pointer_malloc = (char *)malloc(sizeof(char) * (i + j + 1));
 		if (pointer_malloc == ((void *)0))
@@ -73,7 +72,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return ((void *)0);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy_gnl(char *dst, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	src_size;
@@ -97,7 +96,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (src_size);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup_gnl(const char *s)
 {
 	int		index;
 	char	*string_dup;
@@ -123,29 +122,3 @@ char	*ft_strdup(const char *s)
 	return (string_dup);
 }
 
-// void	*ft_memmove(void *dest, const void *src, size_t n)
-// {
-// 	unsigned int	i;
-
-// 	if (dest == NULL && src == NULL)
-// 		return (NULL);
-// 	if (dest < src)
-// 	{
-// 		i = 0;
-// 		while (i < n)
-// 		{
-// 			((char *) dest)[i] = ((char *) src)[i];
-// 			i++;
-// 		}
-// 	}
-// 	else
-// 	{
-// 		i = n;
-// 		while (i > 0)
-// 		{
-// 			((char *) dest)[i - 1] = ((char *) src)[i - 1];
-// 			i--;
-// 		}
-// 	}
-// 	return (dest);
-// }

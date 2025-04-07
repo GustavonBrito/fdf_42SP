@@ -6,22 +6,45 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/06 18:02:53 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/06 22:28:35 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "includes/err_messages.h"
 #include "includes/fdf.h"
 #include "libft/headers/ft_printf.h"
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
 #include "minilibx/mlx.h"
 
-// int validate_map_values(int fd)
-// {
-	
-	
-// 	return (0);
-// }
+int	validate_map_values(char *path_file)
+{
+	char	*buffer;
+	char	**split;
+	int		fd;
+	int		i;
+
+	fd = open(path_file, O_RDONLY);
+	while (1)
+	{
+		buffer = get_next_line(fd);
+		if (buffer == NULL)
+			break ;
+		split = ft_split(buffer, ' ');
+		i = 0;
+		while (split[i])
+		{
+			if (validate_element(split[i]) == -1)
+			{
+				ft_printf("Erro no token: %s\n", split[i]);
+				break ;
+			}
+			ft_printf("%s\n", split[i]);
+			i++;
+		}
+	}
+	return (0);
+}
 
 int	validate_map_structure(int fd)
 {
@@ -43,9 +66,7 @@ int	validate_map_structure(int fd)
 		if (first_line == 0)
 			first_line = i;
 		else if (first_line != i)
-		{
 			return ((ft_free_split(split, i)), (free(buffer)), (-1));
-		}
 		ft_free_split(split, i);
 		free(buffer);
 	}
@@ -98,9 +119,10 @@ int	init_validations(int argc, char **argv)
 		else
 			return (-1);
 		if (validate_map_structure(fd) == 1)
-			ft_printf("Estrutura do mapa esta ok\n");
-		if (validate_map_values() == 1)
-			ft_printf("Valores do mapa está ok\n");
+			ft_printf("Estrutura ok\n");
+		if (validate_map_values(argv[1]) == 1)
+			ft_printf("Valores do mapa estao ok\n");
 	}
+	// close(fd);
 	return (0);
 }

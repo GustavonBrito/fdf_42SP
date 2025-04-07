@@ -9,7 +9,8 @@ HEADER = -I $(LIBFT_DIR)
 NAME = main
 
 SRCS =	main.c \
-		validations.c
+		validations.c\
+		utils.c
 
 OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 

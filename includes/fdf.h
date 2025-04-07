@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:14:02 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/01 01:02:01 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/06 22:28:14 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,9 @@ typedef struct s_point {
 	int		color;
 }	t_point;
 
-void    validate_map(char *filename);
-
-int     parse_hex_value(char *str);
-
-t_point *parse_line(char *line, int y, int cols);
-
+int		init_validations(int argc, char **argv);
+void	ft_free_split(char **array, int count);
+int		validate_element(const char *token);
 
 
 #endif

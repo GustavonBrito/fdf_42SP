@@ -6,11 +6,11 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 00:18:11 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/12/21 13:50:56 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/05 03:09:47 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../headers/get_next_line.h"
 
 char	*extract_line(char **buffer)
 {
@@ -20,10 +20,10 @@ char	*extract_line(char **buffer)
 
 	if (*buffer == NULL || **buffer == '\0')
 		return (NULL);
-	new_line = ft_strchr(*buffer, '\n');
+	new_line = ft_strchr_gnl(*buffer, '\n');
 	if (!new_line)
 	{
-		line = ft_strdup(*buffer);
+		line = ft_strdup_gnl(*buffer);
 		if (!line)
 			return (NULL);
 		(*buffer)[0] = '\0';
@@ -33,8 +33,8 @@ char	*extract_line(char **buffer)
 	line = malloc(sizeof(char) * (line_length + 2));
 	if (!line)
 		return (NULL);
-	ft_strlcpy(line, *buffer, line_length + 2);
-	ft_strlcpy(*buffer, new_line + 1, ft_strlen(new_line));
+	ft_strlcpy_gnl(line, *buffer, line_length + 2);
+	ft_strlcpy_gnl(*buffer, new_line + 1, ft_strlen_gnl(new_line));
 	return (line);
 }
 
@@ -47,7 +47,7 @@ char	*find_newline_in_buffer(char **buffer, int fd)
 	read_buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!read_buffer)
 		return (NULL);
-	while (!ft_strchr(*buffer, '\n'))
+	while (!ft_strchr_gnl(*buffer, '\n'))
 	{
 		bytes_read = read(fd, read_buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
@@ -56,7 +56,7 @@ char	*find_newline_in_buffer(char **buffer, int fd)
 			break ;
 		read_buffer[bytes_read] = '\0';
 		tmp = *buffer;
-		*buffer = ft_strjoin(*buffer, read_buffer);
+		*buffer = ft_strjoin_gnl(*buffer, read_buffer);
 		free(tmp);
 		if (!*buffer)
 			return (free(read_buffer), NULL);
