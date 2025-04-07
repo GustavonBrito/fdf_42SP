@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/06 22:28:35 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/07 09:04:32 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,13 @@ int	validate_map_values(char *path_file)
 		while (split[i])
 		{
 			if (validate_element(split[i]) == -1)
-			{
-				ft_printf("Erro no token: %s\n", split[i]);
-				break ;
-			}
-			ft_printf("%s\n", split[i]);
+				return ((ft_free_split(split, i)), (free(buffer)), (-1));
 			i++;
 		}
+		ft_free_split(split, i);
+		free(buffer);
 	}
-	return (0);
+	return (1);
 }
 
 int	validate_map_structure(int fd)
@@ -98,10 +96,10 @@ int	validate_file_extension(char *path_file)
 	ext_len = ft_strlen(".fdf");
 	len = ft_strlen(path_file);
 	if (len < ext_len)
-		return (0);
+		return (-1);
 	if (ft_strncmp(&path_file[len - ext_len], ".fdf", ext_len) == 0)
 		return (1);
-	return (0);
+	return (1);
 }
 
 int	init_validations(int argc, char **argv)
@@ -120,9 +118,9 @@ int	init_validations(int argc, char **argv)
 			return (-1);
 		if (validate_map_structure(fd) == 1)
 			ft_printf("Estrutura ok\n");
-		if (validate_map_values(argv[1]) == 1)
-			ft_printf("Valores do mapa estao ok\n");
+		// if (validate_map_values(argv[1]) == 1)
+		// 	ft_printf("Valores do mapa estao ok\n");
 	}
-	// close(fd);
+	close(fd);
 	return (0);
 }
