@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/07 09:04:32 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/08 00:06:57 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ int	init_validations(int argc, char **argv)
 			return (-1);
 		if (validate_map_structure(fd) == 1)
 			ft_printf("Estrutura ok\n");
-		// if (validate_map_values(argv[1]) == 1)
-		// 	ft_printf("Valores do mapa estao ok\n");
+		if (validate_map_values(argv[1]) == 1)
+			ft_printf("Valores do mapa estao ok\n");
 	}
 	close(fd);
 	return (0);
