@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/08 00:06:57 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/09 22:51:47 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ int	validate_map_values(char *path_file)
 		while (split[i])
 		{
 			if (validate_element(split[i]) == -1)
-				return ((ft_free_split(split, i)), (free(buffer)), (-1));
+				return ((ft_free_split(split)), (free(buffer))), (-1);
 			i++;
 		}
-		ft_free_split(split, i);
+		ft_free_split(split);
 		free(buffer);
 	}
+	close(fd);
 	return (1);
 }
 
@@ -64,8 +65,8 @@ int	validate_map_structure(int fd)
 		if (first_line == 0)
 			first_line = i;
 		else if (first_line != i)
-			return ((ft_free_split(split, i)), (free(buffer)), (-1));
-		ft_free_split(split, i);
+			return ((ft_free_split(split)), (free(buffer)), (-1));
+		ft_free_split(split);
 		free(buffer);
 	}
 	return (1);
@@ -79,7 +80,6 @@ int	check_file_permissions(char *path_file)
 	fd = open(path_file, O_RDONLY);
 	if (fd == -1)
 	{
-		exit(EXIT_FAILURE);
 		close(fd);
 		return (-1);
 	}

@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 00:18:11 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/05 03:09:47 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/09 21:58:30 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,70 +90,3 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*buffer;
-
-// 	fd = open("arquivo.txt", O_RDONLY);
-// 	buffer = NULL;
-// 	// int i;
-// 	// i = 0;
-// 	// buffer = get_next_line(fd);
-// 	// printf("Buffer final %s", buffer);
-// 	// free(buffer);
-// 	while ((buffer = get_next_line(fd)) != NULL)
-// 	{
-// 		printf("%s\n", buffer);
-// 		free(buffer); // Não esqueça de liberar
-// 						// a memória alocada para cada linha.
-// 	}
-// 	close(fd);
-// 	return (0);
-// }
-
-// void test_gnl(int fd, char *expected_output)
-// {
-//     char *result = get_next_line(fd);
-//     if (result == NULL && expected_output == NULL)
-//     {
-//         printf("Test passed: Expected NULL, got NULL\n");
-//     }
-//     else if (result && expected_output &
-//& strcmp(result, expected_output) == 0)
-//     {
-//         printf("Test passed: Expected '%s',
-// got '%s'\n", expected_output, result);
-//     }
-//     else
-//     {
-//         printf("Test failed: Expected '%s', got '%s'\n",
-//                expected_output ? expected_output : "NULL",
-//                result ? result : "NULL");
-//     }
-//     free(result); // Libere a memória retornada por `get_next_line`
-// }
-
-// int main(void)
-// {
-//     // Abra o arquivo "1char.txt" com o caractere único
-//     int fd = open("1char.txt", O_RDONLY);
-//     if (fd < 0)
-//     {
-//         perror("Error opening file");
-//         return (1);
-//     }
-
-//     // Teste 1: Espera o caractere único no arquivo
-//     printf("Running Test 1...\n");
-//     test_gnl(fd, "0");
-
-//     // Teste 2: Espera NULL (fim de arquivo)
-//     printf("Running Test 2...\n");
-//     test_gnl(fd, NULL);
-
-//     // Feche o arquivo após os testes
-//     close(fd);
-
-//     return (0);
-// }

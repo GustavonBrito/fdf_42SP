@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 17:59:56 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/08 00:55:24 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/09 22:52:06 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
 
-void	ft_free_split(char **array, int count)
+void	ft_free_split(char **array)
 {
 	int	i;
 
 	i = 0;
-	while (i < count)
+	while (array[i])
 	{
 		free(array[i]);
 		i++;
