@@ -121,4 +121,3 @@ char	*ft_strdup_gnl(const char *s)
 	string_dup[s_size] = '\0';
 	return (string_dup);
 }
-

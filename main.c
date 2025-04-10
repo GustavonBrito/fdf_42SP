@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 12:43:59 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/03 23:56:33 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/10 01:19:51 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 int	main(int argc, char **argv)
 {
-	init_validations(argc, argv);
+	if (init_validations(argc, argv) == 1)
+		ft_printf("Validacoes realizadas com sucesso\n");
+	if (init_parser(argv[1]))
+		ft_printf("Parse realizado com sucesso");
 }
 // int		x;
 // int		y;

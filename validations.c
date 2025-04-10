@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/09 22:51:47 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/10 01:32:49 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,13 @@ int	validate_map_values(char *path_file)
 		i = 0;
 		while (split[i])
 		{
+			while (buffer)
+			{
+				free(buffer);
+				buffer = get_next_line(fd);
+			}
 			if (validate_element(split[i]) == -1)
-				return ((ft_free_split(split)), (free(buffer))), (-1);
+				return (((ft_free_split(split)), (free(buffer))), (-1));
 			i++;
 		}
 		ft_free_split(split);
@@ -109,18 +114,16 @@ int	init_validations(int argc, char **argv)
 	fd = 0;
 	if (argc == 2)
 	{
-		if (validate_file_extension(argv[1]) == 1)
-			ft_printf("Extensao correta\n");
-		fd = check_file_permissions(argv[1]);
-		if (fd >= 1)
-			ft_printf("Permissao correta\n");
-		else
+		if (validate_file_extension(argv[1]) == -1)
 			return (-1);
-		if (validate_map_structure(fd) == 1)
-			ft_printf("Estrutura ok\n");
-		if (validate_map_values(argv[1]) == 1)
-			ft_printf("Valores do mapa estao ok\n");
+		fd = check_file_permissions(argv[1]);
+		if (fd < 1)
+			return (-1);
+		if (validate_map_structure(fd) == -1)
+			return (-1);
+		ft_printf("%d", validate_map_values(argv[1]));
+
 	}
 	close(fd);
-	return (0);
+	return (1);
 }

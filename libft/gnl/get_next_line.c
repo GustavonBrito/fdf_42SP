@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 00:18:11 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/09 21:58:30 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/09 23:27:46 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,3 @@ char	*get_next_line(int fd)
 		return (free(line), free(buffer), buffer = NULL, NULL);
 	return (line);
 }
-

@@ -10,7 +10,8 @@ NAME = main
 
 SRCS =	main.c \
 		validations.c\
-		utils.c
+		utils.c\
+		map_parser.c
 
 OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 

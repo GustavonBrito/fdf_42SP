@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 17:59:56 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/09 22:52:06 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/09 23:15:43 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,3 @@ int	validate_element(char *token)
 		return (1);
 	return (1);
 }
-
-// talvez implementar um forma de percorrer esse hex para ver se tem algum valor maior q F e menor que 0.
