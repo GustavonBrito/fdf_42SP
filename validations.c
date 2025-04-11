@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/11 11:03:25 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/11 11:06:46 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	validate_map_values(char *path_file)
 		while (split[i])
 		{
 			if (validate_element(split[i]) == -1)
-				return (((ft_free_split(split)), (free(buffer))), (-1));
+				return (((ft_free_split(split)), (free(buffer))),(-1));
 			i++;
 		}
 		ft_free_split(split);
@@ -44,6 +44,7 @@ int	validate_map_values(char *path_file)
 	close(fd);
 	return (1);
 }
+
 
 int	validate_map_structure(int fd)
 {
@@ -116,8 +117,7 @@ int	init_validations(int argc, char **argv)
 			return (-1);
 		if (validate_map_structure(fd) == -1)
 			return (-1);
-		ft_printf("%d", validate_map_values(argv[1]));
-
+		ft_printf("Valor de map values retornado: %d\n", validate_map_values(argv[1]));
 	}
 	close(fd);
 	return (1);
