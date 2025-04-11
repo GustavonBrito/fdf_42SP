@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 12:43:59 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/10 01:19:51 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/10 20:11:42 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	main(int argc, char **argv)
 {
 	if (init_validations(argc, argv) == 1)
 		ft_printf("Validacoes realizadas com sucesso\n");
-	if (init_parser(argv[1]))
-		ft_printf("Parse realizado com sucesso");
+	// if (init_parser(argv[1]))
+	// 	ft_printf("Parse realizado com sucesso");
 }
 // int		x;
 // int		y;

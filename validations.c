@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/10 01:32:49 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/10 21:19:03 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,8 @@ int	validate_map_values(char *path_file)
 		i = 0;
 		while (split[i])
 		{
-			while (buffer)
-			{
-				free(buffer);
-				buffer = get_next_line(fd);
-			}
 			if (validate_element(split[i]) == -1)
-				return (((ft_free_split(split)), (free(buffer))), (-1));
+				return (((ft_free_split(split)), (free(buffer))), free(get_gnl_buffer_addr()),(-1));
 			i++;
 		}
 		ft_free_split(split);
@@ -49,6 +44,7 @@ int	validate_map_values(char *path_file)
 	close(fd);
 	return (1);
 }
+
 
 int	validate_map_structure(int fd)
 {
@@ -121,8 +117,7 @@ int	init_validations(int argc, char **argv)
 			return (-1);
 		if (validate_map_structure(fd) == -1)
 			return (-1);
-		ft_printf("%d", validate_map_values(argv[1]));
-
+		ft_printf("Valor de map values retornado: %d\n", validate_map_values(argv[1]));
 	}
 	close(fd);
 	return (1);

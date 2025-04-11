@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 17:59:56 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/09 23:15:43 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/10 21:22:42 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ int	validate_element(char *token)
 	else if (token[i] == '\n')
 		return (1);
 	return (1);
+}
+
+char	**get_gnl_buffer_addr(void)
+{
+	static char	*buffer = NULL;
+	return (&buffer);
 }

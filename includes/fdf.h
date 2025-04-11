@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:14:02 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/10 01:15:36 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/10 21:19:45 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		init_validations(int argc, char **argv);
 int		init_parser(char *file_path);
 void	ft_free_split(char **array);
 int		validate_element(const char *token);
+char	**get_gnl_buffer_addr(void);
 
 #endif
 
