@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/10 01:32:49 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/11 11:03:25 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ int	validate_map_values(char *path_file)
 		i = 0;
 		while (split[i])
 		{
-			while (buffer)
-			{
-				free(buffer);
-				buffer = get_next_line(fd);
-			}
 			if (validate_element(split[i]) == -1)
 				return (((ft_free_split(split)), (free(buffer))), (-1));
 			i++;
