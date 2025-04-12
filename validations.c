@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/12 02:35:44 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/12 05:03:08 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	validate_map_values(char *file_path)
 	int		i;
 
 	fd = open(file_path, O_RDONLY);
-	if (fd < 0)
-		return (-1);
 	while (1)
 	{
 		buffer = get_next_line(fd);
