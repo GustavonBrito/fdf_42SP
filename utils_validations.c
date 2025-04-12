@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   auxiliary_functions_utils.c                        :+:      :+:    :+:   */
+/*   utils_validations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 17:59:56 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/11 21:29:16 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/12 02:54:00 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/headers/ft_printf.h"
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
 

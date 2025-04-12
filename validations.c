@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/11 11:06:46 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/12 02:35:44 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 #include "libft/headers/ft_printf.h"
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
-#include "minilibx/mlx.h"
 
-int	validate_map_values(char *path_file)
+int	validate_map_values(char *file_path)
 {
 	char	*buffer;
 	char	**split;
 	int		fd;
 	int		i;
 
-	fd = open(path_file, O_RDONLY);
+	fd = open(file_path, O_RDONLY);
+	if (fd < 0)
+		return (-1);
 	while (1)
 	{
 		buffer = get_next_line(fd);
@@ -35,7 +36,7 @@ int	validate_map_values(char *path_file)
 		while (split[i])
 		{
 			if (validate_element(split[i]) == -1)
-				return (((ft_free_split(split)), (free(buffer))),(-1));
+				return ((free_buffer_gnl(buffer, fd)),(ft_free_split(split)),(-1));
 			i++;
 		}
 		ft_free_split(split);
@@ -73,12 +74,14 @@ int	validate_map_structure(int fd)
 	return (1);
 }
 
-int	check_file_permissions(char *path_file)
+int	check_file_permissions(char *file_path)
 {
 	int	fd;
 
 	fd = 0;
-	fd = open(path_file, O_RDONLY);
+	fd = open(file_path, O_RDONLY);
+	if (fd < 0)
+		return (-1);
 	if (fd == -1)
 	{
 		close(fd);
@@ -89,16 +92,16 @@ int	check_file_permissions(char *path_file)
 	return (-1);
 }
 
-int	validate_file_extension(char *path_file)
+int	validate_file_extension(char *file_path)
 {
 	int	len;
 	int	ext_len;
 
 	ext_len = ft_strlen(".fdf");
-	len = ft_strlen(path_file);
+	len = ft_strlen(file_path);
 	if (len < ext_len)
 		return (-1);
-	if (ft_strncmp(&path_file[len - ext_len], ".fdf", ext_len) == 0)
+	if (ft_strncmp(&file_path[len - ext_len], ".fdf", ext_len) == 0)
 		return (1);
 	return (1);
 }
@@ -117,8 +120,9 @@ int	init_validations(int argc, char **argv)
 			return (-1);
 		if (validate_map_structure(fd) == -1)
 			return (-1);
-		ft_printf("Valor de map values retornado: %d\n", validate_map_values(argv[1]));
+		if (validate_map_values(argv[1]) == -1)
+			return (-1);
+		close(fd);
 	}
-	close(fd);
 	return (1);
 }
