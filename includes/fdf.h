@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:14:02 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/11 11:06:31 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/12 04:32:10 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,20 @@ typedef struct s_point {
 	int		rgb;
 }	t_point;
 
+typedef struct s_map {
+	t_point		**coordinates;
+	int			max_x;
+	int			max_y;
+	int			max_z;
+	int			min_z;
+}	t_map;
+
 int		init_validations(int argc, char **argv);
-int		init_parser(char *file_path);
+int		init_parser(char *path_file);
 void	ft_free_split(char **array);
 int		validate_element(const char *token);
+void	free_buffer_gnl(char *buffer, int fd);
+int		close_and_return_err(int fd);
 
 #endif
 
