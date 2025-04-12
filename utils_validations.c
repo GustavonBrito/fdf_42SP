@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_validations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 17:59:56 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/12 02:54:00 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/12 17:22:18 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int	validate_element(char *token)
 		return (1);
 	return (1);
 }
-void free_buffer_gnl(char *buffer, int fd)
+
+void	free_buffer_gnl(char *buffer, int fd)
 {
 	while (buffer)
 	{
@@ -52,4 +53,3 @@ void free_buffer_gnl(char *buffer, int fd)
 		buffer = get_next_line(fd);
 	}
 }
-
