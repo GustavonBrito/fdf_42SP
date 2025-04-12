@@ -34,7 +34,8 @@ int	validate_map_values(char *file_path)
 		while (split[i])
 		{
 			if (validate_element(split[i]) == -1)
-				return ((free_buffer_gnl(buffer, fd)),(ft_free_split(split)),(-1));
+				return ((free_buffer_gnl(buffer, fd)), (ft_free_split(split)),
+					(-1));
 			i++;
 		}
 		ft_free_split(split);
@@ -43,7 +44,6 @@ int	validate_map_values(char *file_path)
 	close(fd);
 	return (1);
 }
-
 
 int	validate_map_structure(int fd)
 {
