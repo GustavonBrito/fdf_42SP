@@ -10,7 +10,7 @@ NAME = main
 
 SRCS =	main.c \
 		validations.c\
-		utils.c\
+		utils_validations.c\
 		map_parser.c
 
 OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
@@ -45,4 +45,7 @@ re:
 
 .PHONY: all clean fclean re
 
-#valgrind cc open_x.c -Lminilibx -lmlx_Linux -lX11 -lXext -lm
+# valgrind cc open_x.c -Lminilibx -lmlx_Linux -lX11 -lXext -lm
+# valgrind --leak-check=full --track-fds=yes
+# array[x][y]
+# y e linha e x e coluna
