@@ -6,9 +6,11 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 02:31:49 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/12 04:31:45 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/12 04:53:21 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "includes/fdf.h"
 
 int close_and_return_err(int fd)
 {
