@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 23:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/12 05:03:08 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/13 16:06:11 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/err_messages.h"
+// #include "includes/err_messages.h"
 #include "includes/fdf.h"
 #include "libft/headers/ft_printf.h"
 #include "libft/headers/get_next_line.h"
@@ -34,12 +34,11 @@ int	validate_map_values(char *file_path)
 		while (split[i])
 		{
 			if (validate_element(split[i]) == -1)
-				return ((free_buffer_gnl(buffer, fd)), (ft_free_split(split)),
+				return ((free_buffer_gnl(buffer, fd)), (ft_free_split(split, NULL)),
 					(-1));
 			i++;
 		}
-		ft_free_split(split);
-		free(buffer);
+		ft_free_split(split, buffer);
 	}
 	close(fd);
 	return (1);
@@ -65,9 +64,8 @@ int	validate_map_structure(int fd)
 		if (first_line == 0)
 			first_line = i;
 		else if (first_line != i)
-			return ((ft_free_split(split)), (free(buffer)), (-1));
-		ft_free_split(split);
-		free(buffer);
+			return ((ft_free_split(split, buffer)), (-1));
+		ft_free_split(split, buffer);
 	}
 	return (1);
 }
