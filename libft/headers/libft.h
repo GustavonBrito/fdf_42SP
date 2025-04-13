@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 16:18:17 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/19 20:46:58 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/13 02:28:55 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 int		ft_putnbr(int n);
+int		ft_atoi_hexa(char *str);
 
 #endif
