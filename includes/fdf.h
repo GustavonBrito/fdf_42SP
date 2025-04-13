@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:14:02 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/12 04:32:10 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/13 00:32:14 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	ft_free_split(char **array);
 int		validate_element(const char *token);
 void	free_buffer_gnl(char *buffer, int fd);
 int		close_and_return_err(int fd);
+int		verify_hex(char *token);
+void	parse_hex_to_map(char *split,t_map *map, int y, int x);
+
 
 #endif
 
