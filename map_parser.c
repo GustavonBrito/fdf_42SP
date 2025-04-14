@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 23:31:29 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/14 01:58:59 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/14 02:43:05 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
 
-// Depois tenho que fazer o free de map->coordinates, map->coordinates[j] e map;
+// Depois tenho que fazer o free de map->coordinates, map->coordinates[x] e map, ficar de olho em buffer estatico da gnl tambem;
 
 void	read_and_alloc_map(int fd, t_map *map);
 int		parse_line_to_row(t_map *map, char *file_path);
@@ -42,9 +42,9 @@ t_map	*init_parser(char *file_path)
 	map = center_map(map);
 	if (!map)
 		return (NULL);
-	map = apply_projection(map);
-	if (!map)
-		return (NULL);
+	// map = apply_projection(map);
+	// if (!map)
+	// 	return (NULL);
 	return (map);
 }
 
