@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils_validations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/06 17:59:56 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/13 16:05:42 by lsilva-x         ###   ########.fr       */
+/*   Created: 2025/04/13 18:09:18 by gustavo-lin       #+#    #+#             */
+/*   Updated: 2025/04/13 18:15:14 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
+
+void		free_buffer_gnl(char *buffer, int fd);
+int			validate_element(char *token);
+void		ft_free_split(char **array, char *buffer);
 
 void	ft_free_split(char **array, char *buffer)
 {
