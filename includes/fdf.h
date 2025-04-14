@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:14:02 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/13 17:13:34 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/04/14 02:23:10 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <math.h>
+
+#define ISO_ANGLE 0.523599
+
+typedef struct s_cam
+{
+        float        scale_factor;
+        float        scale_z;
+        float        move_x;
+        float        move_y;
+}        t_cam;
 
 typedef struct s_point {
 	
@@ -33,16 +44,14 @@ typedef struct s_map {
 	int			min_z;
 }	t_map;
 
-int		init_validations(int argc, char **argv);
-// int		init_parser(char *path_file);
-t_map	*init_parser(char *file_path);
-void	ft_free_split(char **array, char *buffer);
-int		validate_element(const char *token);
-void	free_buffer_gnl(char *buffer, int fd);
-void	close_and_return_err(int fd); //? REFACT THIS IN FUTURE
-int		verify_hex(char *token);
-void	parse_hex_to_map(char *split,t_map *map, int y, int x);
-
+int			init_validations(int argc, char **argv);
+t_map		*init_parser(char *file_path);
+void		ft_free_split(char **array, char *buffer);
+int			validate_element(const char *token);
+void		free_buffer_gnl(char *buffer, int fd);
+int			verify_hex(char *token);
+void		parse_hex_to_map(char *split,t_map *map, int y, int x);
+void populate_pts(t_map *map);
 
 #endif
 
