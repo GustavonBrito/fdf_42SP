@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 12:43:59 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/14 02:22:23 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/14 02:48:48 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ int	main(int argc, char **argv)
 		ft_printf("Parser falhou!\n");
 		exit(0);
 	}
-	
+	//Parei aqui fazendo init cam, verifique o fluxo do gpt
 	ft_printf("Parse realizado com sucesso\n");
 }
