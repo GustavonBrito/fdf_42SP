@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:14:02 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/14 22:04:46 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/15 01:29:55 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,6 @@
 #define WIDTH		1400
 #define HEIGHT		900
 
-typedef struct s_fdf
-{
-	void	*mlx;
-	void	*win;
-	t_map	*map;
-	t_cam	*cam;
-	t_data	img;
-}	t_mlx;
 
 typedef struct	s_data {
 	void	*img;
@@ -41,10 +33,10 @@ typedef struct	s_data {
 
 typedef struct s_cam
 {
-		float		scale_factor;
-		float		scale_z;
-		float		offset_x;
-		float		offset_y;
+	float		scale_factor;
+	float		scale_z;
+	float		offset_x;
+	float		offset_y;
 }		t_cam;
 
 typedef struct s_point {
@@ -63,9 +55,19 @@ typedef struct s_map {
 	int			min_z;
 }	t_map;
 
+typedef struct s_fdf
+{
+	void	*mlx;
+	void	*win;
+	t_map	*map;
+	t_cam	*cam;
+	t_data	*img;
+}	t_mlx;
+
 int			init_validations(int argc, char **argv);
 t_map		*init_parser(char *file_path);
 t_cam		*init_cam(t_map *map);
+int			init_mlx(t_mlx *mlx);
 void		ft_free_split(char **array, char *buffer);
 int			validate_element(const char *token);
 void		free_buffer_gnl(char *buffer, int fd);
