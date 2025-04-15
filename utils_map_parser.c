@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 02:31:49 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/13 22:51:52 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/15 00:57:11 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void populate_pts(t_map *map)
 		return ;
 	while (++x < map->max_y)
 	{
-		map->coordinates[x] = malloc(sizeof(t_point) * map->max_x);
+		map->coordinates[x] = (t_point *)malloc(sizeof(t_point) * map->max_x);
 		if (!map->coordinates[x])
 		{
 			while (++i <= x)
