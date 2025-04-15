@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_cam.c                                         :+:      :+:    :+:   */
+/*   init_cam_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 19:02:50 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/14 21:16:07 by gserafio         ###   ########.fr       */
+/*   Created: 2025/04/14 21:00:54 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/14 21:04:57 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
 
-t_cam *init_cam(t_map *map)
+float	get_scale(t_map *map)
 {
-	t_cam *cam;
-	
-	cam = malloc(sizeof(t_cam));
-	if (!cam)
-		return (NULL);
-	cam->offset_x = WIDTH / 2;
-	cam->offset_y = HEIGHT / 2;
-	cam->scale_z = 1;
-	cam->scale_factor = get_scale(map);
-	return (cam);
+	float	scale;
+	float	scale_x;
+	float	scale_y;
+
+	scale_x = WIDTH / (float)map->max_x;
+	scale_y = HEIGHT / (float)map->max_y;
+	if (scale_x < scale_y)
+		scale = scale_x;
+	else
+		scale = scale_y;
+	return (scale / 1.75);
 }
