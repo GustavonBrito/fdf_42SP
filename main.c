@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 12:43:59 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/14 02:48:48 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/14 19:03:06 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/14 22:10:39 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 #include "libft/headers/ft_printf.h"
 #include "includes/fdf.h"
 
-// typedef struct	s_data {
-// 	void	*img;
-// 	char	*addr;
-// 	int		bits_per_pixel;
-// 	int		line_length;
-// 	int		endian;
-// }				t_data;
-	
 // void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 // {
 // 	char	*destiny;
@@ -71,9 +63,14 @@
 // 		ft_printf("\n");
 // 	}
 // }
+
+
 int	main(int argc, char **argv)
 {
+	t_mlx	*mlx;
 	t_map	*map;
+	t_cam	*cam;
+
 	if (init_validations(argc, argv) == 1)
 		ft_printf("Validacoes realizadas com sucesso\n");
 	else
@@ -87,6 +84,19 @@ int	main(int argc, char **argv)
 		ft_printf("Parser falhou!\n");
 		exit(0);
 	}
-	//Parei aqui fazendo init cam, verifique o fluxo do gpt
 	ft_printf("Parse realizado com sucesso\n");
+	cam = init_cam(map);
+	if (!cam)
+	{
+		ft_printf("Inicializacao da camera falhou\n");
+		exit(0);
+	}
+	mlx = (t_mlx *)malloc(sizeof(t_mlx));
+	mlx->cam = cam;
+	mlx->map = map;	
+	ft_printf("Inicialização da camera feita\n");
+	if (init_mlx(mlx) == 1)
+	{
+		
+	}
 }

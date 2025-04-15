@@ -12,7 +12,9 @@ SRCS =	main.c \
 		validations.c\
 		utils_validations.c\
 		map_parser.c\
-		utils_map_parser.c
+		utils_map_parser.c\
+		init_cam.c\
+		init_cam_utils.c
 
 OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 

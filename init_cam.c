@@ -6,21 +6,17 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:02:50 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/14 21:16:07 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/14 21:34:46 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
 
 t_cam *init_cam(t_map *map)
 {
 	t_cam *cam;
 	
-	cam = malloc(sizeof(t_cam));
+	cam = (t_cam *)malloc(sizeof(t_cam));
 	if (!cam)
 		return (NULL);
 	cam->offset_x = WIDTH / 2;
