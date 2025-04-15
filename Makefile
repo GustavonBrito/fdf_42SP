@@ -14,13 +14,15 @@ SRCS =	main.c \
 		map_parser.c\
 		utils_map_parser.c\
 		init_cam.c\
-		init_cam_utils.c
+		init_cam_utils.c\
+		init_mlx.c
 
 OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 OBJ_DIR = build
 
 CFLAGS = -Werror -Wall -Wextra
+LDFLAGS = -Lminilibx -lmlx_Linux -lX11 -lXext -lm
 
 all: $(LIBFT) $(NAME)
 
@@ -28,7 +30,7 @@ $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
