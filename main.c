@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:06 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/14 22:10:39 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/15 02:24:26 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minilibx/mlx.h"
-#include "libft/headers/libft.h"
 #include "libft/headers/ft_printf.h"
 #include "includes/fdf.h"
 
@@ -22,6 +20,7 @@
 // 	destiny = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 // 	*(unsigned int*)destiny = color;
 // }
+// Bresenham, usar as 
 
 // int main(void)
 // {
@@ -91,12 +90,12 @@ int	main(int argc, char **argv)
 		ft_printf("Inicializacao da camera falhou\n");
 		exit(0);
 	}
+	ft_printf("Inicialização da camera feita\n");
 	mlx = (t_mlx *)malloc(sizeof(t_mlx));
 	mlx->cam = cam;
-	mlx->map = map;	
-	ft_printf("Inicialização da camera feita\n");
+	mlx->map = map;
 	if (init_mlx(mlx) == 1)
-	{
-		
-	}
+		ft_printf("Inicializacao do MLX feita com sucesso");
+	else
+		ft_printf("Error na inicializacao do MLX");
 }
