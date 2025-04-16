@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:29 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/16 03:48:19 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/16 03:53:04 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int init_mlx(t_mlx *mlx)
 	mlx_mouse_hook(mlx->win, mouse_hook, mlx);
 	mlx_hook(mlx->win, 17, 0, close_window, mlx);
 	mlx_loop(mlx->mlx);
+	mlx_destroy_display(mlx);
 	return (1);
 }
