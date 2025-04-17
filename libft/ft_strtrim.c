@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 23:58:36 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:43:12 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:35:08 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:35:10 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

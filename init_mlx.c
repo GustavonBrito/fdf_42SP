@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:29 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/16 03:56:26 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/17 12:26:17 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int close_window()
 int	key_hook(int keycode, t_mlx *mlx)
 {
 	int y;
-	
 	if (keycode == 65307)
 	{
 		y = -1;

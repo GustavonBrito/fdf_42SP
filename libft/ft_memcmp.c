@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 21:37:14 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:41:56 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:32:53 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:32:55 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

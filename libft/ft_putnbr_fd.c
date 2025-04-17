@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 05:22:41 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:42:23 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:33:26 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:33:28 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

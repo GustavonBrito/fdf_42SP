@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 18:27:15 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 20:47:41 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:32:48 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:32:50 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

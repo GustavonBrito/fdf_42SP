@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 20:58:38 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:43:16 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:35:16 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:35:18 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

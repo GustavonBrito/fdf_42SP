@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 02:26:05 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/13 02:26:22 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:32:21 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:32:23 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

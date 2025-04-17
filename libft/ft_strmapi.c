@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 21:01:45 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:42:59 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:34:41 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:34:45 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

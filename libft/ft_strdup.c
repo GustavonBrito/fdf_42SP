@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 00:51:17 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:42:38 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:34:01 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:34:03 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

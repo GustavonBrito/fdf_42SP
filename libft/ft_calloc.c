@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 22:44:54 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 20:47:31 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:32:39 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:32:41 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

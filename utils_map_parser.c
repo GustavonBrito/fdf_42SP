@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_map_parser.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 02:31:49 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/15 00:57:11 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:31:51 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:31:53 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

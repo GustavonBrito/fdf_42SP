@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 19:30:48 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/03/19 21:42:46 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:34:17 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:34:19 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

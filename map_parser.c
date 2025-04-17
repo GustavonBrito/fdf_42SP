@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 23:31:29 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/14 19:58:38 by gserafio         ###   ########.fr       */
+/*   Created: 2025/04/17 12:31:30 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:31:32 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,32 +133,3 @@ t_map	*center_map(t_map *map)
 	return (map);
 }
 
-// t_map	*apply_projection(t_map *map)
-// {
-// 	int		x;	
-// 	int		y;
-// 	int		original_x;
-// 	int		original_y;
-// 	float	z_multiplier;
-// 	int 	z_range;
-
-// 	z_range = map->max_z + abs(map->min_z);
-// 	y = -1;
-// 	if (z_range > 50)
-// 		z_multiplier = 1;
-// 	else
-// 		z_multiplier = 8;
-// 	while (++y < map->max_y)
-// 	{
-// 		x = -1;
-// 		while (++x < map->max_x)
-// 		{
-// 			original_x = map->coordinates[y][x].x;
-// 			original_y = map->coordinates[y][x].y;
-// 			map->coordinates[y][x].x = (original_x - original_y) * cos(ISO_ANGLE);
-// 			map->coordinates[y][x].y = ((original_x + original_y) * sin(ISO_ANGLE))
-// 				- (map->coordinates[y][x].z * z_multiplier);
-// 		}
-// 	}
-// 	return (map);
-// }

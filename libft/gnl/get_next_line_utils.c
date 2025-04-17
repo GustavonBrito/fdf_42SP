@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 00:18:13 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/05 03:10:32 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/17 12:36:06 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:36:08 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

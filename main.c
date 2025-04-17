@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:06 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/16 03:53:16 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/17 12:30:14 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/headers/ft_printf.h"
 #include "includes/fdf.h"
-
-// void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
-// {
-// 	char	*destiny;
-
-// 	destiny = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-// 	*(unsigned int*)destiny = color;
-// }
-// Bresenham, usar as 
 
 // int main(void)
 // {
