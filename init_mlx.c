@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:29 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:26:17 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/17 18:45:49 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,14 @@ int	key_hook(int keycode, t_mlx *mlx)
 int init_mlx(t_mlx *mlx)
 {
 	mlx->mlx = mlx_init();
+	mlx->img = (t_data *)malloc(sizeof(t_data));
 	if (!mlx->mlx)
 		return (0);
 	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "fdf_42");
-	//mlx->img->img = mlx_new_image(mlx, WIDTH, HEIGHT);
+	mlx->img->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
+	mlx->img->addr = mlx_get_data_addr(mlx->img->img, &mlx->img->bits_per_pixel, &mlx->img->line_length, &mlx->img->endian);
 	mlx_key_hook(mlx->win, key_hook, mlx);
 	mlx_hook(mlx->win, 17, 0, close_window, mlx);
 	mlx_loop(mlx->mlx);
-	mlx_destroy_display(mlx);
 	return (1);
 }

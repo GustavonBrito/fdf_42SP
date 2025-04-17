@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:10 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:32:12 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/17 20:30:15 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 #define WIDTH		1400
 #define HEIGHT		900
 
+typedef struct	s_line{
+	t_point	start;
+	t_point	end;
+	float	slope;
+}	t_line;
 
 typedef struct	s_data {
 	void	*img;

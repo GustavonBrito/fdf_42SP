@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:06 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:30:14 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/17 19:07:55 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,8 @@ int	main(int argc, char **argv)
 		ft_printf("Inicializacao do MLX feita com sucesso");
 	else
 		ft_printf("Error na inicializacao do MLX");
+	if (init_render(mlx) == 1)
+		ft_printf("Algoritmo aplicado com sucesso");
+	else
+		ft_printf("Erro ao aplicar o algorritmo!");
 }
