@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_render_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:30:47 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 19:18:18 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/18 12:40:12 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,60 +15,74 @@
 #include "libft/headers/ft_printf.h"
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
+#include "minilibx/mlx.h"
 
-t_map	*apply_projection(t_map *map)
+void	apply_isometric(t_line *line)
 {
-	int		x;
-	int		y;
-	int		original_x;
-	int		original_y;
-	float	z_multiplier;
-	int 	z_range;
+	t_point	new_start;
+	t_point	new_end;
 
-	z_range = map->max_z + abs(map->min_z);
-	y = -1;
-	if (z_range > 50)
-		z_multiplier = 1;
-	else
-		z_multiplier = 8;
-	while (++y < map->max_y)
-	{
-		x = -1;
-		while (++x < map->max_x)
-		{
-			original_x = map->coordinates[y][x].x;
-			original_y = map->coordinates[y][x].y;
-			map->coordinates[y][x].x = (original_x - original_y) * cos(ISO_ANGLE);
-			map->coordinates[y][x].y = ((original_x + original_y) * sin(ISO_ANGLE))
-				- (map->coordinates[y][x].z * z_multiplier);
-		}
-	}
-	return (map);
+	new_start.x = (line->start.x - line->start.y) * cos(ISO_ANGLE);
+	new_start.y = (line->start.x + line->start.y) * sin(ISO_ANGLE)
+		- line->start.z;
+	line->start.x = new_start.x;
+	line->start.y = new_start.y;
+	new_end.x = (line->end.x - line->end.y) * cos(ISO_ANGLE);
+	new_end.y = (line->end.x + line->end.y) * sin(ISO_ANGLE)
+		- line->end.z;
+	line->end.x = new_end.x;
+	line->end.y = new_end.y;
 }
 
-void	my_mlx_pixel_put(t_data *data, t_mlx *mlx, int x, int y, int color)
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	int color = 0xABCDEF;
-
-	if (data->bits_per_pixel != 32)
-		color = mlx_get_color_value(mlx, color);
-	
 	int pixel = (y * data->line_length) + (x * 4);
 
 	if (data->endian == 1)
 	{
-		data->addr[pixel + 0] = (color >> 24);
-		data->addr[pixel + 1] = (color >> 16) & 0xFF;
-		data->addr[pixel + 2] = (color >> 8) & 0xFF;
-		data->addr[pixel + 3] = (color) & 0xFF;
+		data->addr[pixel + 1] = (color >> 16) & 0xFF;// Bit Red
+		data->addr[pixel + 2] = (color >> 8) & 0xFF; // Bit Green
+		data->addr[pixel + 3] = (color) & 0xFF; // Bit Blue
 	}
 	else if (data->endian == 0)
 	{
 		data->addr[pixel + 0] = (color) & 0xFF;
 		data->addr[pixel + 1] = (color >> 8) & 0xFF;
 		data->addr[pixel + 2] = (color >> 16) & 0xFF;
-		data->addr[pixel + 3] = (color >> 24);
 	}
 }
 
+void	bresenhams(t_mlx *mlx, t_line *line)
+{
+	int dx = abs(line->end.x - line->start.x);
+	int dy = -abs(line->end.y - line->start.y);
+	int sx = (line->start.x < line->end.x) ? 1 : -1;
+	int sy = (line->start.y < line->end.y) ? 1 : -1;
+	int err = dx + dy;
 
+	int x = line->start.x;
+	int y = line->start.y;
+
+	while (1)
+	{
+		if (x >= 0 && y >= 0 && x < WIDTH && y < HEIGHT)
+		{
+			ft_printf("entrei\n");
+			my_mlx_pixel_put(mlx->img, x, y, line->start.rgb);
+		}
+		if (x == (int)line->end.x && y == (int)line->end.y)
+			break;
+		int e2 = 2 * err;
+		if (e2 >= dy)
+		{
+			err += dy;
+			x += sx;
+		}
+		if (e2 <= dx)
+		{
+			err += dx;
+			y += sy;
+		}
+	}
+	mlx_loop(mlx->mlx);
+}

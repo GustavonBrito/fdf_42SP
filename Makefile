@@ -15,7 +15,10 @@ SRCS =	main.c \
 		utils_map_parser.c\
 		init_cam.c\
 		init_cam_utils.c\
-		init_mlx.c
+		init_mlx.c\
+		mlx_utils.c\
+		init_render.c\
+		init_render_utils.c
 
 OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 

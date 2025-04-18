@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:10 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 20:30:15 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/18 12:33:56 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@
 #define WIDTH		1400
 #define HEIGHT		900
 
-typedef struct	s_line{
-	t_point	start;
-	t_point	end;
-	float	slope;
-}	t_line;
 
 typedef struct	s_data {
 	void	*img;
@@ -69,10 +64,16 @@ typedef struct s_fdf
 	t_data	*img;
 }	t_mlx;
 
+typedef struct	s_line{
+	t_point	start;
+	t_point	end;
+}	t_line;
+
 int			init_validations(int argc, char **argv);
 t_map		*init_parser(char *file_path);
 t_cam		*init_cam(t_map *map);
-int			init_mlx(t_mlx *mlx);
+void		init_mlx(t_mlx *mlx);
+int			init_render(t_mlx *mlx);
 void		ft_free_split(char **array, char *buffer);
 int			validate_element(const char *token);
 void		free_buffer_gnl(char *buffer, int fd);
@@ -80,6 +81,11 @@ int			verify_hex(char *token);
 void		parse_hex_to_map(char *split,t_map *map, int y, int x);
 void		populate_pts(t_map *map);
 float		get_scale(t_map *map);
+void		apply_isometric(t_line *line);
+void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
+int			close_by_x(t_mlx *mlx);
+int			close_by_esc(int keycode, t_mlx *mlx);
+void		close_window(t_mlx *mlx);
+void		bresenhams(t_mlx *mlx, t_line *line);
 
 #endif
-// Parei na parte de validacao de hex, numeros positivos e negativos. depois eu preciso estudar sobre projecao isometrica
