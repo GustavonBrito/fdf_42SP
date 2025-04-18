@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   utils_validations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:58 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:32:01 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/18 20:19:48 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
 
+int			count_words_spaces(char *line);
 void		free_buffer_gnl(char *buffer, int fd);
 int			validate_element(char *token);
 void		ft_free_split(char **array, char *buffer);
@@ -56,4 +57,26 @@ void	free_buffer_gnl(char *buffer, int fd)
 		free(buffer);
 		buffer = get_next_line(fd);
 	}
+}
+
+int	count_words_spaces(char *line)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (line[i])
+	{
+		while (line[i] == ' ')
+			i++;
+		if (line[i] && line[i] != '\n')
+		{
+			count++;
+			while (line[i] && line[i] != ' ' && line[i] != '\n')
+				i++;
+		}
+		i++;
+	}
+	return (count);
 }
