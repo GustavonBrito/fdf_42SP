@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:06 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 19:26:42 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 20:02:52 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ int	main(int argc, char **argv)
 	if (mlx->mlx == NULL)
 		error_in_step(ERR_MLX);
 	init_render(mlx);
-	ft_printf("Algoritmo aplicado com sucesso\n");
 	mlx_loop(mlx->mlx);
 }
