@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:10 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 19:21:11 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 20:17:47 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ int			close_by_esc(int keycode, t_mlx *mlx);
 void		close_window(t_mlx *mlx);
 void		bresenham(t_mlx *mlx, t_line *line);
 void		error_in_step(int error_code);
+int			count_words_spaces(char *line);
 
 #endif
