@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:30 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:38:38 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/18 19:43:53 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
 
-// Depois tenho que fazer o free de map->coordinates, map->coordinates[x] e map, ficar de olho em buffer estatico da gnl tambem;
-
 void	read_and_alloc_map(int fd, t_map *map);
 int		parse_line_to_row(t_map *map, char *file_path);
+void	parse_line_row_loop(t_map *map, char **split, int y);
 t_map	*center_map(t_map *map);
 t_map	*init_parser(char *file_path);
 
@@ -42,9 +41,6 @@ t_map	*init_parser(char *file_path)
 	map = center_map(map);
 	if (!map)
 		return (NULL);
-	// map = apply_projection(map);
-	// if (!map)
-	// 	return (NULL);
 	return (map);
 }
 
@@ -77,7 +73,6 @@ int	parse_line_to_row(t_map *map, char *file_path)
 	char	**split;
 	char	*buffer;
 	int		fd;
-	int		x;
 	int		y;
 
 	y = -1;
@@ -87,28 +82,39 @@ int	parse_line_to_row(t_map *map, char *file_path)
 	while (++y < map->max_y)
 	{
 		buffer = get_next_line(fd);
+		if (!buffer)
+			break ;
 		split = ft_split(buffer, ' ');
-		x = -1;
-		while (++x < map->max_x)
-		{
-			if (verify_hex(split[x]) == IS_HEX)
-				parse_hex_to_map(split[x], map, y, x);
-			else
-			{
-				map->coordinates[y][x].z = ft_atoi(split[x]);
-				map->coordinates[y][x].rgb = 0;
-				if (ft_atoi(split[x]) > map->max_z)
-					map->max_z = ft_atoi(split[x]);
-				if (ft_atoi(split[x]) < map->min_z)
-					map->min_z = ft_atoi(split[x]);
-			}
-			map->coordinates[y][x].x = x;
-			map->coordinates[y][x].y = y;
-		}
+		parse_line_row_loop(map, split, y);
 		ft_free_split(split, buffer);
 	}
 	close(fd);
 	return (1);
+}
+
+void	parse_line_row_loop(t_map *map, char **split, int y)
+{
+	int	x;
+	int	z;
+
+	x = -1;
+	while (++x < map->max_x)
+	{
+		if (verify_hex(split[x]) == IS_HEX)
+			parse_hex_to_map(split[x], map, y, x);
+		else
+		{
+			z = ft_atoi(split[x]);
+			map->coordinates[y][x].z = z;
+			map->coordinates[y][x].rgb = RED;
+			if (z > map->max_z)
+				map->max_z = z;
+			if (z < map->min_z)
+				map->min_z = z;
+		}
+		map->coordinates[y][x].x = x;
+		map->coordinates[y][x].y = y;
+	}
 }
 
 t_map	*center_map(t_map *map)
