@@ -6,58 +6,75 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 19:06:39 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 12:22:23 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 18:52:09 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fdf.h"
 #include "includes/messages.h"
-#include "minilibx/mlx.h"
 #include "libft/headers/ft_printf.h"
 #include "libft/headers/get_next_line.h"
 #include "libft/headers/libft.h"
+#include "minilibx/mlx.h"
 
 static void		draw_line(t_mlx *mlx, t_point start, t_point end);
-static void		send_coordenates_to_render(t_mlx *mlx);
 static t_line	*init_line(t_mlx *mlx, t_point start, t_point end);
-int				init_render(t_mlx *mlx);
+void			init_render(t_mlx *mlx);
 
-int init_render(t_mlx *mlx)
+void	init_render(t_mlx *mlx)
 {
-	send_coordenates_to_render(mlx);
-	return (1);
-}
-static void send_coordenates_to_render(t_mlx *mlx)
-{
-	int y;
-	int x;
-	
+	int	y;
+	int	x;
+
 	y = -1;
-	while(++y < mlx->map->max_y)
+	while (++y < mlx->map->max_y)
 	{
 		x = -1;
-		while(++x < mlx->map->max_x)
+		while (++x < mlx->map->max_x)
 		{
 			if (x < mlx->map->max_x - 1)
-				draw_line(mlx, mlx->map->coordinates[y][x], mlx->map->coordinates[y][x + 1]);
+				draw_line(mlx, mlx->map->coordinates[y][x],
+					mlx->map->coordinates[y][x + 1]);
 			if (y < mlx->map->max_y - 1)
-				draw_line(mlx, mlx->map->coordinates[y][x], mlx->map->coordinates[y + 1][x]);
+				draw_line(mlx, mlx->map->coordinates[y][x],
+					mlx->map->coordinates[y + 1][x]);
 		}
 	}
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img->img, 0, 0);
 }
 
-static void	draw_line(t_mlx *mlx, t_point start, t_point end)
+void	center(t_mlx *mlx, t_line *line)
+{
+	line->start.x += mlx->cam->offset_x;
+	line->start.y += mlx->cam->offset_y;
+	line->end.x += mlx->cam->offset_x;
+	line->end.y += mlx->cam->offset_y;
+}
+
+void	scale(t_mlx *mlx, t_line *line)
+{
+	float	scale;
+
+	scale = mlx->cam->scale_factor;
+	line->start.x *= scale;
+	line->start.y *= scale;
+	line->end.x *= scale;
+	line->end.y *= scale;
+}
+
+void	draw_line(t_mlx *mlx, t_point start, t_point end)
 {
 	t_line	*line;
 
 	line = init_line(mlx, start, end);
+	scale(mlx, line);
 	apply_isometric(line);
-	bresenhams(mlx, line);
-	free (line);
+	center(mlx, line);
+	bresenham(mlx, line);
+	free(line);
 }
 
-static t_line	*init_line(t_mlx *mlx, t_point start, t_point end)
+t_line	*init_line(t_mlx *mlx, t_point start, t_point end)
 {
 	t_line	*line;
 	float	z_range;
