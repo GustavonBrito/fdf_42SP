@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:29 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 13:16:52 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 20:08:46 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_mlx(t_mlx *mlx)
 	mlx->img = (t_data *)malloc(sizeof(t_data));
 	if (!mlx->img)
 		return ;
-	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "fdf_42");
+	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "FDF_42");
 	mlx->img->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
 	mlx->img->addr = mlx_get_data_addr(mlx->img->img, &mlx->img->bits_per_pixel,
 			&mlx->img->line_length, &mlx->img->endian);
