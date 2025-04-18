@@ -9,6 +9,7 @@ HEADER = -I $(LIBFT_DIR)
 NAME = main
 
 SRCS =	main.c \
+		utils_main.c\
 		validations.c\
 		utils_validations.c\
 		map_parser.c\
@@ -52,8 +53,3 @@ re:
 	@$(MAKE) all
 
 .PHONY: all clean fclean re
-
-# valgrind cc open_x.c -Lminilibx -lmlx_Linux -lX11 -lXext -lm
-# valgrind --leak-check=full --track-fds=yes
-# array[x][y]
-# y e linha e x e coluna
