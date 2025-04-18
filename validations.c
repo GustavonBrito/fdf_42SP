@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:04 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:32:07 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/18 20:29:23 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int	validate_map_values(char *file_path)
 
 int	validate_map_structure(int fd)
 {
-	char	**split;
 	char	*buffer;
 	int		i;
 	int		first_line;
@@ -84,15 +83,12 @@ int	validate_map_structure(int fd)
 		buffer = get_next_line(fd);
 		if (buffer == NULL)
 			break ;
-		split = ft_split(buffer, ' ');
-		i = 0;
-		while (split[i])
-			i++;
+		i = count_words_spaces(buffer);
 		if (first_line == 0)
 			first_line = i;
 		else if (first_line != i)
-			return ((ft_free_split(split, buffer)), (-1));
-		ft_free_split(split, buffer);
+			return (free_buffer_gnl(buffer, fd), (-1));
+		free(buffer);
 	}
 	return (1);
 }
