@@ -6,54 +6,68 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:10 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 12:33:56 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 17:52:41 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINILIBX_H
-#define MINILIBX_H
+#ifndef FDF_H
+# define FDF_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <math.h>
+# include <fcntl.h>
+# include <math.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-#define ISO_ANGLE	0.523599
-#define WIDTH		1400
-#define HEIGHT		900
+# define ISO_ANGLE 0.523599
+# define WIDTH 1400
+# define HEIGHT 900
+# define RED 16711680
 
+typedef struct s_bres
+{
+	int		dx;
+	int		dy;
+	int		step_x;
+	int		step_y;
+	int		decision_parameter;
+	int		e2;
+	int		x;
+	int		y;
+}			t_bres;
 
-typedef struct	s_data {
+typedef struct s_data
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
+}			t_data;
 
 typedef struct s_cam
 {
-	float		scale_factor;
-	float		scale_z;
-	float		offset_x;
-	float		offset_y;
-}		t_cam;
+	float	scale_factor;
+	float	scale_z;
+	int		offset_x;
+	int		offset_y;
+}			t_cam;
 
-typedef struct s_point {
-	
+typedef struct s_point
+{
 	int		x;
 	int		y;
 	int		z;
 	int		rgb;
-}	t_point;
+}			t_point;
 
-typedef struct s_map {
-	t_point		**coordinates;
-	int			max_x;
-	int			max_y;
-	int			max_z;
-	int			min_z;
-}	t_map;
+typedef struct s_map
+{
+	t_point	**coordinates;
+	int		max_x;
+	int		max_y;
+	int		max_z;
+	int		min_z;
+}			t_map;
 
 typedef struct s_fdf
 {
@@ -62,23 +76,24 @@ typedef struct s_fdf
 	t_map	*map;
 	t_cam	*cam;
 	t_data	*img;
-}	t_mlx;
+}			t_mlx;
 
-typedef struct	s_line{
+typedef struct s_line
+{
 	t_point	start;
 	t_point	end;
-}	t_line;
+}			t_line;
 
 int			init_validations(int argc, char **argv);
 t_map		*init_parser(char *file_path);
 t_cam		*init_cam(t_map *map);
 void		init_mlx(t_mlx *mlx);
-int			init_render(t_mlx *mlx);
+void		init_render(t_mlx *mlx);
 void		ft_free_split(char **array, char *buffer);
 int			validate_element(const char *token);
 void		free_buffer_gnl(char *buffer, int fd);
 int			verify_hex(char *token);
-void		parse_hex_to_map(char *split,t_map *map, int y, int x);
+void		parse_hex_to_map(char *split, t_map *map, int y, int x);
 void		populate_pts(t_map *map);
 float		get_scale(t_map *map);
 void		apply_isometric(t_line *line);
@@ -86,6 +101,6 @@ void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int			close_by_x(t_mlx *mlx);
 int			close_by_esc(int keycode, t_mlx *mlx);
 void		close_window(t_mlx *mlx);
-void		bresenhams(t_mlx *mlx, t_line *line);
+void		bresenham(t_mlx *mlx, t_line *line);
 
 #endif
