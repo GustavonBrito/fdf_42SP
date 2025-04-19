@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:58:10 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/18 21:18:13 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:57:42 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/headers/ft_printf.h"
-#include "includes/fdf.h"
+#include "fdf.h"
 
 void	handle_error_code1(t_mlx *mlx);
 void	handle_error_code2(t_mlx *mlx);

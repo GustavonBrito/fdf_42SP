@@ -3,20 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:10 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 21:16:48 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 12:43:15 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
+# include "minilibx-linux/mlx.h"
+# include "libft/headers/libft.h"
+# include "libft/headers/ft_printf.h"
+# include "libft/headers/get_next_line.h"
+# include "messages.h"
+
 # include <fcntl.h>
 # include <math.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <signal.h>
+
+# include <X11/X.h>
+# include <X11/Xlib.h>
 
 # define ISO_ANGLE 0.523599
 # define WIDTH 1400

@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_render.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 19:06:39 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 18:52:09 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 12:42:59 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
-#include "minilibx/mlx.h"
+#include "fdf.h"
 
 static void		draw_line(t_mlx *mlx, t_point start, t_point end);
 static t_line	*init_line(t_mlx *mlx, t_point start, t_point end);

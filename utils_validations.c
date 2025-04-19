@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils_validations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:58 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 20:19:48 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:59:44 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
+#include "fdf.h"
 
-int			count_words_spaces(char *line);
-void		free_buffer_gnl(char *buffer, int fd);
-int			validate_element(char *token);
-void		ft_free_split(char **array, char *buffer);
+int		count_words_spaces(char *line);
+void	free_buffer_gnl(char *buffer, int fd);
+int		validate_element(const char *token);
+void	ft_free_split(char **array, char *buffer);
 
 void	ft_free_split(char **array, char *buffer)
 {
@@ -31,7 +30,7 @@ void	ft_free_split(char **array, char *buffer)
 		return (free(array));
 }
 
-int	validate_element(char *token)
+int	validate_element(const char *token)
 {
 	int	i;
 

@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
+#include "fdf.h"
 
 void	read_and_alloc_map(int fd, t_map *map);
 int		parse_line_to_row(t_map *map, char *file_path);

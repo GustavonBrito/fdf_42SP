@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:32:04 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 20:29:23 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 12:52:59 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "includes/err_messages.h"
-#include "includes/fdf.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
+#include "fdf.h"
 
 int			validate_map_values(char *file_path);
 int			validate_map_structure(int fd);
@@ -122,5 +118,5 @@ int	validate_file_extension(char *file_path)
 		return (-1);
 	if (ft_strncmp(&file_path[len - ext_len], ".fdf", ext_len) == 0)
 		return (1);
-	return (1);
+	return (-1);
 }
