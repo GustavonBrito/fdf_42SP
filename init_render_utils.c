@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_render_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:30:47 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 18:50:48 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:56:45 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/get_next_line.h"
-#include "libft/headers/libft.h"
-#include "minilibx/mlx.h"
+#include "fdf.h"
 
 void	apply_isometric(t_line *line)
 {

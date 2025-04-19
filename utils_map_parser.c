@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_map_parser.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:51 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 21:18:58 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:57:45 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "libft/headers/libft.h"
+#include "fdf.h"
 
 void		populate_pts(t_map *map);
 void		parse_hex_to_map(char *buffer, t_map *map, int y, int x);

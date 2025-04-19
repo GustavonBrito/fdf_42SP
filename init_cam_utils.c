@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_cam_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 21:00:54 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 18:46:56 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:53:25 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
+#include "fdf.h"
 
 float	get_scale(t_map *map)
 {

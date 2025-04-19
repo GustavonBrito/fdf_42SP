@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_cam.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:21 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 17:05:53 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:57:00 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "libft/headers/ft_printf.h"
+#include "fdf.h"
 
 t_cam	*init_cam(t_map *map)
 {

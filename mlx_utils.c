@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 10:03:38 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/18 21:12:10 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:57:38 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "libft/headers/ft_printf.h"
-#include "minilibx/mlx.h"
-#include <X11/X.h>
-#include <X11/Xlib.h>
-#include <signal.h>
+#include "fdf.h"
 
 void	close_window(t_mlx *mlx)
 {

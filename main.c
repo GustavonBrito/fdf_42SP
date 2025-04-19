@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:06 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 20:52:34 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 12:49:16 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "includes/messages.h"
-#include "libft/headers/ft_printf.h"
-#include "minilibx/mlx.h"
+#include "fdf.h"
 
 int	main(int argc, char **argv)
 {
@@ -21,6 +18,11 @@ int	main(int argc, char **argv)
 	t_map	*map;
 	t_cam	*cam;
 
+	if (argc != 2)
+	{
+		ft_printf(ERR_USAGE);
+		return (1);
+	}
 	mlx = (t_mlx *)malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (0);
@@ -35,8 +37,6 @@ int	main(int argc, char **argv)
 		error_in_step(ERR_CAM, mlx);
 	mlx->cam = cam;
 	init_mlx(mlx);
-	if (mlx->mlx == NULL)
-		error_in_step(ERR_MLX, mlx);
 	init_render(mlx);
 	mlx_loop(mlx->mlx);
 }

@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:03:29 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 20:08:46 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:56:26 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fdf.h"
-#include "libft/headers/ft_printf.h"
-#include "minilibx/mlx.h"
-#include <X11/X.h>
-#include <X11/Xlib.h>
-#include <signal.h>
+#include "fdf.h"
 
 void	init_mlx(t_mlx *mlx)
 {
