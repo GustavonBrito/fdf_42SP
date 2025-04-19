@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 10:03:38 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/18 19:45:36 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 21:12:10 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	close_window(t_mlx *mlx)
 		mlx_destroy_display(mlx->mlx);
 		free(mlx->mlx);
 	}
-	free(mlx);
+	if (mlx)
+		free(mlx);
 	exit(0);
 }
 

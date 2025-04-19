@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_map_parser.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:51 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/17 12:31:53 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/18 21:18:58 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft/headers/ft_printf.h"
 #include "libft/headers/libft.h"
 
-void 		populate_pts(t_map *map);
+void		populate_pts(t_map *map);
 void		parse_hex_to_map(char *buffer, t_map *map, int y, int x);
 int			verify_hex(char *token);
 
@@ -55,14 +55,13 @@ void	parse_hex_to_map(char *buffer, t_map *map, int y, int x)
 	ft_free_split(split, NULL);
 }
 
-void populate_pts(t_map *map)
+void	populate_pts(t_map *map)
 {
 	int		x;
 	int		i;
-	
+
 	x = -1;
 	i = -1;
-	// add (t_point **) to prevent undefined behavior
 	map->coordinates = (t_point **)malloc(sizeof(t_point *) * map->max_y);
 	if (!map->coordinates)
 		return ;

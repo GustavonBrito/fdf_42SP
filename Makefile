@@ -10,6 +10,7 @@ NAME = main
 
 SRCS =	main.c \
 		utils_main.c\
+		error_handlers.c\
 		validations.c\
 		utils_validations.c\
 		map_parser.c\

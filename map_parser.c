@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:30 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 19:43:53 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/18 21:05:15 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	parse_line_to_row(t_map *map, char *file_path)
 	fd = open(file_path, O_RDONLY);
 	map->max_z = 0;
 	map->min_z = 0;
-	while (++y < map->max_y)
+	while (++y <= map->max_y)
 	{
 		buffer = get_next_line(fd);
 		if (!buffer)
