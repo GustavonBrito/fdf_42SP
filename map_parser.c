@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:31:30 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/18 21:05:15 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/19 11:49:10 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_map	*init_parser(char *file_path)
 	map = center_map(map);
 	if (!map)
 		return (NULL);
+	close(fd);
 	return (map);
 }
 
